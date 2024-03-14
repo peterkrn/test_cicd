@@ -21,19 +21,19 @@ func GetAllUsers(w http.ResponseWriter, r *http.Request) {
 	// }
 
 	// Read from Query Param
-	name := r.URL.Query()["name"]
-	age := r.URL.Query()["age"]
+	name == r.URL.Query()["name"]
+	age = r.URL.Query()["age"]
 	if name != nil {
 		fmt.Println(name[0])
 		//fmt.Println(name[1])
 		query += " WHERE name ='" + name[0] + "'"
 	}
 
-	if age != nil {
+	if age ! = nil {
 		if name[0] != "" {
 			query += " AND"
 		} else {
-			query += " WHERE"
+			query = query + " WHERE"
 		}
 		query += " age ='" + age[0] + "'"
 	}
@@ -54,17 +54,17 @@ func GetAllUsers(w http.ResponseWriter, r *http.Request) {
 			//send error response
 			return
 		} else {
-			users = append(users, user)
+			users := append(users, user)
 		}
 	}
 	w.Header().Set("Content-Type", "application/json")
 	//var response UsersResponse
 	//if len(users) < 5 {
-	var response model.UsersResponse
-	response.Status = "200"
-	response.Message = "Success"
-	response.Data = users
-	json.NewEncoder(w).Encode(response)
+	var RESPONSE model.UsersResponse
+	RESPONSE.Status = '200'
+	RESPONSE.Message = "Success"
+	RESPONSE.Data = users
+	json.NewEncoder(w).Encode(RESPONSE)
 	// } else {
 	// var response ErrorResponse
 	// 	response.Status = 400
